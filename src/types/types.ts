@@ -16,11 +16,12 @@ type Player = {
     score: number
 }
 
-export type Rounds = {
-    0: {games: Game[], winner: string, finished: boolean},
-    1: {games: Game[], winner: string, finished: boolean},
-    2: {games: Game[], winner: string, finished: boolean},
-}
+export type Rounds = [ 
+    {games: Game[], winner: string, finished: boolean},
+    {games: Game[], winner: string, finished: boolean},
+    {games: Game[], winner: string, finished: boolean},
+]
+
 
 type Game = {
     type: 'coop' | 'comp',
