@@ -1,6 +1,8 @@
 import { useState } from "react"
 import { Rounds, Status, Teams } from "../types/types"
 
+import Cards from "../data/cards"
+
 const emptyTeams: Teams = {
     team1: {
         name: '',
@@ -35,7 +37,8 @@ const useGame = () => {
     const [status, setStatus] = useState<Status>(emptyStatus)
 
     const selectRandomCard = () => {
-        //NEED THE ARRAY OF CARDS
+        const randomIndex = Math.floor(Math.random() * Cards.length);
+        return Cards[randomIndex];
     }
 
     const manageFinishRound = () => {
@@ -227,12 +230,14 @@ const useGame = () => {
 
     return {
         teams,
+        setTeams,
         rounds,
         status,
         selectGameWinner,
         changeTeamName,
         addPlayerToTeam,
-        startGame
+        startGame,
+        selectRandomCard
     }
 }
 
