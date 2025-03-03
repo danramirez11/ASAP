@@ -36,9 +36,18 @@ const useGame = () => {
     const [rounds, setRounds] = useState<Rounds>(emptyRounds)
     const [status, setStatus] = useState<Status>(emptyStatus)
 
-    const selectRandomCard = () => {
-        const randomIndex = Math.floor(Math.random() * Cards.length);
-        return Cards[randomIndex];
+    const selectRandomCard = (grupaltype: boolean) => {
+
+        if(grupaltype === false){
+            const onlyIndividualCards = Cards.filter(card => card.grupal === false)
+            const randomCard = onlyIndividualCards[Math.floor(Math.random() * onlyIndividualCards.length)]
+            return randomCard
+        
+    }else{
+        const onlygrupalCards = Cards.filter(card => card.grupal === true)
+        const randomCard = onlygrupalCards[Math.floor(Math.random() * onlygrupalCards.length)] 
+        return randomCard
+    }
     }
 
     const manageFinishRound = () => {
@@ -139,7 +148,7 @@ const useGame = () => {
                     }
                 })
                 
-                selectRandomCard()
+                selectRandomCard(false)
 
             }
         } else {
@@ -149,7 +158,7 @@ const useGame = () => {
                     game: p.game + 1
                 }
             })
-            selectRandomCard()
+            selectRandomCard(false)
         }
 
     }
@@ -184,11 +193,7 @@ const useGame = () => {
 
         setTeams(newTeams)
 
-        const newRound: Rounds = {...rounds}
-        newRound[status.round].games[status.game].winner = winner
-        newRound[status.round].games[status.game].finished = true
-
-        setRounds(newRound)
+        
 
         manageNextGame()
     }
@@ -218,7 +223,7 @@ const useGame = () => {
     }
 
     const startGame = () => {
-        selectRandomCard()
+        selectRandomCard(false)
 
         setStatus((p) => {
             return {

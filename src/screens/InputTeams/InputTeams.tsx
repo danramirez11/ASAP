@@ -28,22 +28,22 @@ const InputTeams = ({
       setTeamName(name);
       changeTeamName("team1", name);
     } else {
+        const secondName = team2Ref.current?.value || "";
       setSecondTeamName(team2Ref.current?.value || "");
-      const secondName = team2Ref.current?.value || "";
       changeTeamName("team2", secondName);
     }
   };
 
   const handleAddMember = (team: number) => {
-    const member = memberRef.current?.value || "";
-    setTeamMembers([...teamMembers, member]);
-    addPlayerToTeam("team1", member);
     if (team === 1) {
+      const member = memberRef.current?.value || "";
+      setTeamMembers([...teamMembers, member]);
+      addPlayerToTeam("team1", member);
     } else {
-      if (secondTeamMembers.length < 4) {
+        const member = memberRef.current?.value || "";
         setSecondTeamMembers([...secondTeamMembers, member]);
         addPlayerToTeam("team2", member);
-      }
+      
     }
     memberRef.current!.value = "";
   };
@@ -67,10 +67,7 @@ const InputTeams = ({
       <h1>Enter your Team names and members</h1>
       <div>
         <h2>Team 1</h2>
-        <input
-          type="text"
-          placeholder="Team 1 Name"
-          ref={team1Ref}
+        <input type="text" placeholder="Team 1 Name" ref={team1Ref}
           onChange={() => handleTeamNameChange(1)}
         />
         <button onClick={() => handleSubmitTeam(1)}>Submit Team 1</button>

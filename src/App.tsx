@@ -6,6 +6,7 @@ import Card from './screens/Card/Card'
 import { Teams } from './types/types'
 
 import useGame from './hooks/useGame'
+import WinnersScreen from './screens/Winners/Winners'
 
 function App() {
 
@@ -25,8 +26,10 @@ function App() {
       teams={teams}
     />
   ) : indexscreen === 2 ? (
-    <Card teams={teams} />
-  ) : null
+    <Card teams={teams} OnNext={() => setindexscreen(3)} />
+  ) : indexscreen === 3 ? (
+    <WinnersScreen teams={teams} />
+  ) : <h1>loco que putas haces</h1>
 
   return <div className="App">{screens}</div>
 }
