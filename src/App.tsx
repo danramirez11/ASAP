@@ -29,7 +29,7 @@ function App() {
     <Card teams={teams} OnNext={() => setindexscreen(3)} />
   ) : indexscreen === 3 ? (
     <WinnersScreen teams={teams} />
-  ) : <h1>loco que putas haces</h1>
+  ) : <h1>no</h1>
 
   return <div className="App">{screens}</div>
 }
