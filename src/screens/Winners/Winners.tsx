@@ -1,18 +1,19 @@
-import { Teams } from "../../types/types";
-import useGame from "../../hooks/useGame";
+import { Status } from "../../types/types";
+
+type winnerType = {
+    status: Status;
+}
 
 
-const WinnersScreen = ({teams} : any) => {
-
-
-    const selectgamewinner = teams.team1.score > teams.team2.score ? teams.team1.name : teams.team2.name;
+const WinnersScreen = ({status} : winnerType) => {
 
     return (
         <>
-        <h1>Winner</h1>
-        <h2>{selectgamewinner}</h2>
-        </>
+        <h1>{status.winnerTeam === 'Empate' ? 'Oh no! Hubo un empate' : status.winnerTeam + ' son los ganadores'}</h1>
 
+        <h4>{status.winnerPlayer.length === 1 ? 'Mejor jugador' : 'Mejores jugadores'}</h4>
+        <h2>{status.winnerPlayer.map((p) => p)}</h2>
+        </>
     );
     }
 

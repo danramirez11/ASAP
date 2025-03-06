@@ -1,70 +1,65 @@
-import { useEffect, useState } from "react";
-import useGame from "../../hooks/useGame";
-import { Teams } from "../../types/types";
+import { useState } from "react";
+import { Game, Rounds, Status, Teams } from "../../types/types";
 
-const Card = ({ teams, OnNext }: { teams: Teams, OnNext: ()=> void }) => {
+type CardType = {
+  teams: Teams;
+  rounds: Rounds;
+  onRounds: () => Game[];
+  status: Status;
+  selectWinner: (type: string, winner: string) => void;
+}
 
-  const [indexgame, setindexgame] = useState(0);
-  const [indexround, setindexround] = useState(0);
-  const [player, setPlayer] = useState("");
-  const [Card, setCard] = useState({nombre: "",reto: "",categoria: "",puntos: 0,grupal: false});
+const Card = ({ teams, rounds, status, selectWinner }: CardType) => {
 
-  const { selectRandomCard, selectGameWinner} = useGame();
-
-
-  const handleCard = () => {
-    if (indexgame < 3) {
-      const random = Math.floor(Math.random() * teams.team1.players.length);
-      
-      
-      const playerRandom = teams.team1.players[random].name;
-      setPlayer(playerRandom);
-      console.log(playerRandom);
-      
-      const card = selectRandomCard(false);
-      setCard(card);
-    }else if (indexgame === 3) {
-        const card = selectRandomCard(true);
-        setCard(card);
-  }else{
-    OnNext()
-  }
-};
+  const [clicked, setClicked] = useState(false);
   
   const handleWinnerSelection = (team: 'team1' | 'team2') => {
     console.log(`Winner: ${teams[team].name}`);
-    const type = Card.grupal ? 'coop' : 'individual';
-    selectGameWinner(team, type);
-    handleCard();
-    setindexgame(indexgame + 1);
-    console.log(indexgame);
-    teams[team].score += 1;
-    console.log(teams);
+    const type = rounds[status.round].games[status.game].type;
     
-    if (indexgame === 3) {
-        console.log('round finished');
-        setindexround(indexround + 1);
-        
+    if (type === 'coop') {
+      selectWinner(type, team === 'team1' ? teams.team1.name : teams.team2.name);
+    } else {
+      if (team === 'team1') {
+        selectWinner(type, rounds[status.round].games[status.game].players[0])
+      } else {
+        selectWinner(type, rounds[status.round].games[status.game].players[1]);
+      } 
+    }
 
-  }} ;
+    setClicked(false);
 
-  
+} ;
 
-  useEffect(() => {
-    handleCard();
-  }, []);
-console.log();
+  console.log(teams)
+  console.log(rounds)
+  console.log(status)
 
+  console.log(rounds[status.round].games[status.game].players[0])
+  if (rounds[status.round].games.length === 0) {
+    return <h1>Cargando...</h1>;
+  }
   
   return (
     <div>
-        <h1>Your turn {player}</h1>
-      <h1>{Card.nombre}</h1>
-      <h4>{Card.reto}</h4>
-      <h2>{Card.categoria}</h2>
-      {Card.grupal ? <h3>Grupal</h3> : <h3>Individual</h3>}
-      <button id="team1" onClick={() => handleWinnerSelection('team1')}>{teams.team1.name}</button>
-      <button id="team2" onClick={() => handleWinnerSelection('team2')}>{teams.team2.name}</button>
+      { clicked ? 
+        <>
+        <button id="team1" onClick={() => handleWinnerSelection('team1')}>{teams.team1.name}</button>
+        <button id="team2" onClick={() => handleWinnerSelection('team2')}>{teams.team2.name}</button>
+        </>
+        :
+        <>
+        <h1>{rounds[status.round].games[status.game].players[0]} vs {rounds[status.round].games[status.game].players[1]}</h1>
+        <h1>{rounds[status.round].games[status.game].name}</h1>
+        <h4>{rounds[status.round].games[status.game].card}</h4>
+        <h2>{rounds[status.round].games[status.game].cathegory}</h2>
+        {rounds[status.round].games[status.game].type === 'coop' ? <h3>Grupal</h3> : <h3>Individual</h3>}
+        <button onClick={() => setClicked(true)}>Siguiente</button>
+        </>
+      }
+      <p>Ronda {status.round + 1}</p>
+      <p>{teams.team1.name}: {teams.team1.score}</p>
+      <p>{teams.team2.name}: {teams.team2.score}</p>
     </div>
   );
 };

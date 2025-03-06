@@ -23,9 +23,10 @@ export type Rounds = [
 ]
 
 
-type Game = {
+export type Game = {
     type: 'coop' | 'comp',
     card: string,
+    name: string,
     cathegory: string,
     players: string[],
     winner: string,

@@ -3,33 +3,38 @@ import './App.css'
 import StartMenu from './screens/StartMenu/StartMenu'
 import InputTeams from './screens/InputTeams/InputTeams'
 import Card from './screens/Card/Card'
-import { Teams } from './types/types'
-
 import useGame from './hooks/useGame'
 import WinnersScreen from './screens/Winners/Winners'
 
 function App() {
 
-  const { teams, changeTeamName, addPlayerToTeam  } = useGame()
+  const { teams, changeTeamName, addPlayerToTeam, manageRounds, rounds, status, selectGameWinner, startGame } = useGame()
   const [indexscreen, setindexscreen] = useState(0)
+
+  const handleStartGame = () => {
+    startGame()
+    setindexscreen(2)
+  }
   
-
- 
-
-  const screens = indexscreen === 0 ? (
-    <StartMenu Onclick={() => setindexscreen(1)} />
-  ) : indexscreen === 1 ? (
+  const screens = 
+    status.page === 'finish' ? 
+    (<WinnersScreen status={status}/>) : 
+    
+    indexscreen === 0 ? 
+    ( <StartMenu Onclick={() => setindexscreen(1)} />) : 
+    
+    indexscreen === 1 ? (
     <InputTeams
-      Onclick={() => setindexscreen(2)}
+      Onclick={() => handleStartGame()}
       changeTeamName={changeTeamName}
       addPlayerToTeam={addPlayerToTeam}
       teams={teams}
-    />
-  ) : indexscreen === 2 ? (
-    <Card teams={teams} OnNext={() => setindexscreen(3)} />
-  ) : indexscreen === 3 ? (
-    <WinnersScreen teams={teams} />
-  ) : <h1>no</h1>
+    />) : 
+    
+    indexscreen === 2 ? (
+    <Card teams={teams} onRounds = {() => manageRounds()} rounds = {rounds} status = {status} selectWinner = {(type, winner) => selectGameWinner(type, winner)}/> ) : 
+    
+    <h1>no</h1>
 
   return <div className="App">{screens}</div>
 }

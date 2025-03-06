@@ -72,6 +72,7 @@ const InputTeams = ({
         />
         <button onClick={() => handleSubmitTeam(1)}>Submit Team 1</button>
         <h2>Add Members to Team 1</h2>
+        { teams.team1.players.map((player) => (<p>{player.name}</p>))}
         <input type="text" placeholder="Member Name" ref={memberRef} />
         <button onClick={() => handleAddMember(1)}>Add Member</button>
         <button onClick={() => handlenext()}>next</button>
@@ -89,6 +90,7 @@ const InputTeams = ({
         />
         <button onClick={() => handleSubmitTeam(2)}>Submit Team 2</button>
         <h2>Add Members to Team 2</h2>
+        { teams.team2.players.map((player) => (<p>{player.name}</p>))}
         <input type="text" placeholder="Member Name" ref={memberRef} />
         <button onClick={() => handleAddMember(2)}>Add Member</button>
         <button onClick={Onclick}>Lets play</button>
