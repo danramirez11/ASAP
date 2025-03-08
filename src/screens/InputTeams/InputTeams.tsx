@@ -39,11 +39,18 @@ const InputTeams = ({
       const member = memberRef.current?.value || "";
       setTeamMembers([...teamMembers, member]);
       addPlayerToTeam("team1", member);
+      if(teamMembers.length === 2){
+        setindexteam(2);
+      }
     } else {
         const member = memberRef.current?.value || "";
         setSecondTeamMembers([...secondTeamMembers, member]);
         addPlayerToTeam("team2", member);
-      
+        if(secondTeamMembers.length === 2){
+
+        Onclick();
+
+        }
     }
     memberRef.current!.value = "";
   };
@@ -51,35 +58,35 @@ const InputTeams = ({
   const handleSubmitTeam = (team: number) => {
     if (team === 1) {
       console.log("Team 1:", teamName, teamMembers);
+      setindexteam(1);
     } else {
+      setindexteam(3)
       console.log("Team 2:", secondTeamName, secondTeamMembers);
     }
   };
 
-  const handlenext = () => {
-    setindexteam(1);
-    console.log(teamMembers, secondTeamMembers);
-    console.log(teams);
-  };
+  
 
   return indexteam === 0 ? (
-    <div>
+    <>
       <h1>Enter your Team names and members</h1>
-      <div>
+      
         <h2>Team 1</h2>
         <input type="text" placeholder="Team 1 Name" ref={team1Ref}
           onChange={() => handleTeamNameChange(1)}
-        />
+          />
         <button onClick={() => handleSubmitTeam(1)}>Submit Team 1</button>
+          </>
+  ) : indexteam === 1 ? (
+        <>
         <h2>Add Members to Team 1</h2>
         { teams.team1.players.map((player) => (<p>{player.name}</p>))}
         <input type="text" placeholder="Member Name" ref={memberRef} />
         <button onClick={() => handleAddMember(1)}>Add Member</button>
-        <button onClick={() => handlenext()}>next</button>
-      </div>
-    </div>
-  ) : (
-    <div>
+        </>
+   
+  ) : indexteam === 2 ? (
+    
       <div>
         <h2>Team 2</h2>
         <input
@@ -89,13 +96,16 @@ const InputTeams = ({
           onChange={() => handleTeamNameChange(2)}
         />
         <button onClick={() => handleSubmitTeam(2)}>Submit Team 2</button>
+      </div>
+  ) : (
+      <>
         <h2>Add Members to Team 2</h2>
         { teams.team2.players.map((player) => (<p>{player.name}</p>))}
         <input type="text" placeholder="Member Name" ref={memberRef} />
         <button onClick={() => handleAddMember(2)}>Add Member</button>
         <button onClick={Onclick}>Lets play</button>
-      </div>
-    </div>
+      </>
+    
   );
 };
 
