@@ -5,6 +5,7 @@ import InputTeams from './screens/InputTeams/InputTeams'
 import Card from './screens/Card/Card'
 import useGame from './hooks/useGame'
 import WinnersScreen from './screens/Winners/Winners'
+import Intermision from './screens/Intermision/Intermision'
 
 function App() {
 
@@ -25,13 +26,12 @@ function App() {
     
     indexscreen === 1 ? (
     <InputTeams
-      Onclick={() => handleStartGame()}
-      changeTeamName={changeTeamName}
-      addPlayerToTeam={addPlayerToTeam}
-      teams={teams}
-    />) : 
+      Onclick={ () => handleStartGame()} changeTeamName={changeTeamName} addPlayerToTeam={addPlayerToTeam} teams={teams}/>
+    ) : indexscreen === 2 ? (
+      <Intermision teams={teams} Onclick={() => setindexscreen(3)} />
+    ) :
     
-    indexscreen === 2 ? (
+    indexscreen === 3 ? (
     <Card teams={teams} onRounds = {() => manageRounds()} rounds = {rounds} status = {status} selectWinner = {(type, winner) => selectGameWinner(type, winner)}/> ) : 
     
     <h1>no</h1>

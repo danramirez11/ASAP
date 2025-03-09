@@ -1,15 +1,7 @@
 import { useState, useRef } from "react";
 import { Teams } from "../../types/types";
 
-const InputTeams = ({
-  Onclick,
-  changeTeamName,
-  addPlayerToTeam,
-  teams
-}: {
-  Onclick: () => void;
-  changeTeamName: (team: 'team1' | 'team2', name: string) => void;
-  addPlayerToTeam: (team: 'team1' | 'team2', player: string) => void;
+const InputTeams = ({Onclick,changeTeamName,addPlayerToTeam,teams}: {Onclick: () => void; changeTeamName: (team: 'team1' | 'team2', name: string) => void; addPlayerToTeam: (team: 'team1' | 'team2', player: string) => void;
   teams: Teams;
 }) => {
   const [indexteam, setindexteam] = useState(0);
