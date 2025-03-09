@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Status } from "../../types/types";
+import "./winners.css";
 
 type winnerType = {
     status: Status;
