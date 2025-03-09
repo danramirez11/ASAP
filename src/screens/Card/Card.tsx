@@ -48,8 +48,10 @@ const Card = ({ teams, rounds, status, selectWinner }: CardType) => {
           <div className="screenwinnerselection">
           <h1>¡Solo uno puede brillar!</h1>
           <p>¿Quien se lleva la gloria?</p>
+          <div className="button-container">
           <button id="team1" onClick={() => handleWinnerSelection('team1')}>{teams.team1.name}</button>
           <button id="team2" onClick={() => handleWinnerSelection('team2')}>{teams.team2.name}</button>
+          </div>
           <p>Selecciona el equipo que ganó el reto</p>
           </div>
           </div>
