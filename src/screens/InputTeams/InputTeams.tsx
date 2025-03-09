@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import { Teams } from "../../types/types";
-import './InputTeams.css';
+import "./InputTeam.css";
 
 const InputTeams = ({Onclick, changeTeamName, addPlayerToTeam, teams}: {Onclick: () => void; changeTeamName: (team: 'team1' | 'team2', name: string) => void; addPlayerToTeam: (team: 'team1' | 'team2', player: string) => void;
   teams: Teams;
@@ -111,36 +111,6 @@ const InputTeams = ({Onclick, changeTeamName, addPlayerToTeam, teams}: {Onclick:
         </>
       )}
     </div>
-  ) : indexteam === 2 ? (
-    
-      <>
-        <h1>¿Como se llama tu team?</h1>
-
-        <div className="card-input">
-        <h2>Team 2: <span>{teams.team2.name}</span></h2>
-        <p>¡Dale un nombre a tu <b>Team!</b></p>
-        <input
-          type="text"
-          placeholder="Nombre Team 2"
-          ref={team2Ref}
-          onChange={() => handleTeamNameChange(2)}
-        />
-        <button onClick={() => handleSubmitTeam(2)}>Aceptar</button>
-        </div>
-      </>
-  ) : (
-      <>
-        <h1>¿Apodos épicos o qué?</h1>
-
-        <div className="card-input">
-          <h2>{teams.team2.name}</h2>
-          <p>Pon los apodos de tu <b>Team</b></p>
-          { teams.team2.players.map((player) => (<p key={player.name}>{player.name}</p>))}
-          <input type="text" placeholder="Member Name" ref={memberRef} />
-          <button onClick={() => handleAddMember(2)}>{secondTeamMembers.length < 2 ? 'Agregar' : '¡A jugar!'}</button>
-        </div>
-      </>
-    
   );
 };
 
