@@ -44,7 +44,7 @@ const Card = ({ teams, rounds, status, selectWinner }: CardType) => {
     <div>
       { clicked ? 
         <>
-          <h2>¡Solo uno puede brillar!</h2>
+          <h1>¡Solo uno puede brillar!</h1>
           <p>¿Quien se lleva la gloria?</p>
           <button id="team1" onClick={() => handleWinnerSelection('team1')}>{teams.team1.name}</button>
           <button id="team2" onClick={() => handleWinnerSelection('team2')}>{teams.team2.name}</button>
@@ -57,7 +57,7 @@ const Card = ({ teams, rounds, status, selectWinner }: CardType) => {
           <p>{rounds[status.round].games[status.game].card}</p>
           { rounds[status.round].games[status.game].subCathegory !== 'none' &&
             <div className="card-cathegory">
-              <h3>Categoría</h3>
+              <h2>Categoría</h2>
               <h4>{rounds[status.round].games[status.game].subCathegory}</h4>
             </div>
           }
