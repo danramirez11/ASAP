@@ -10,7 +10,7 @@ function StartMenu({ Onclick }: startmenutypes) {
             <div className='screeninicio'>
                 <p>EL JUEGO PARA TERMINARLO</p>
                 <p>¡LO MÁS PRONTO POSIBLE!</p>
-                <button onClick={Onclick}>Tap to start</button>
+                <button onClick={Onclick}>¡ Comenzar !</button>
             </div>
         </div>
     );
