@@ -9,10 +9,11 @@
     
 }
 .screeninicio{
+    font-family: 'Lufga Medium', sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 155vh;
+    height: 160vh;
 
 }
