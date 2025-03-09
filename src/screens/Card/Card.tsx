@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Rounds, Status, Teams } from "../../types/types";
-import "./Card.css";
+import "./selectwinner.css";
 
 type CardType = {
   teams: Teams;
