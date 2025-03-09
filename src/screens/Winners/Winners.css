@@ -15,8 +15,21 @@
     align-items: center;
     height: 80vh;
 }
+.winnersname{
+    display: flex;
+    justify-content: space-between; 
+    width: 80%; 
+    padding: 20px;
+    
+}
 .winners-container h3{
+    font-family: 'Lufga Bold', sans-serif;
+    color: white; 
+    font-size: 35px;
+
+}
+.winners-container h4{
     font-family: 'Lufga Medium', sans-serif;
-    color: white;
-   
+    color: white; 
+    font-size: 30px;
 }
