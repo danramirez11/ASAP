@@ -17,3 +17,8 @@
     height: 160vh;
 
 }
+
+.screeninicio p {
+    margin-bottom:5px ;
+    margin-top: 0px;
+}
