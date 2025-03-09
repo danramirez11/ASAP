@@ -30,7 +30,8 @@ export type Game = {
     cathegory: string,
     players: string[],
     winner: string,
-    finished: boolean
+    finished: boolean,
+    subCathegory: string
 }
 
 export type Status = {

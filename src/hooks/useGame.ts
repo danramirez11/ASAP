@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { Game, Rounds, Status, Teams } from "../types/types"
 
-import Cards from "../data/cards"
+import {cards, subCatgories} from "../data/cards"
 
 const emptyTeams: Teams = {
     team1: {
@@ -53,7 +53,8 @@ const useGame = () => {
                     cathegory: '',
                     players: [],
                     winner: '',
-                    finished: false
+                    finished: false,
+                    subCathegory: 'none'
                 }
 
                 const player1 = team1players[Math.floor(Math.random() * team1players.length)]
@@ -68,9 +69,14 @@ const useGame = () => {
                 console.log('jugadores restantes: ', team1players, team2players)
 
                 const card = selectRandomCard(false)
-                game.card = card.reto
+                game.card = card.reto.replace('PLAYER1', player1).replace('PLAYER2', player2) + ' ' + card.condicion_victoria.replace('PLAYER1', player1).replace('PLAYER2', player2)
                 game.name = card.nombre
                 game.cathegory = card.categoria
+
+                if (card.subcategoria) {
+                    const subCat: string[] = subCatgories[card.categoria as keyof typeof subCatgories]
+                    game.subCathegory = subCat[Math.floor(Math.random() * subCat.length)]
+                }
 
                 games.push(game)
             }
@@ -79,12 +85,18 @@ const useGame = () => {
 
             const grupalGame: Game = {
                 type: 'coop',
-                card: grupalCard.reto,
+                card: grupalCard.reto.replace('PLAYER1', teams.team1.name).replace('PLAYER2', teams.team2.name) + ' ' + grupalCard.condicion_victoria.replace('PLAYER1', teams.team1.name).replace('PLAYER2', teams.team2.name),
                 name: grupalCard.nombre,
                 cathegory: grupalCard.categoria,
                 players: [teams.team1.name, teams.team2.name],
                 winner: '',
-                finished: false
+                finished: false,
+                subCathegory: 'none'
+            }
+
+            if (grupalCard.subcategoria) {
+                const subCat: string[] = subCatgories[grupalCard.categoria as keyof typeof subCatgories]
+                grupalGame.subCathegory = subCat[Math.floor(Math.random() * subCat.length)]
             }
 
             games.push(grupalGame)
@@ -110,11 +122,11 @@ const useGame = () => {
 
     const selectRandomCard = (grupaltype: boolean) => {
         if(grupaltype === false){
-            const onlyIndividualCards = Cards.filter(card => card.grupal === false)
+            const onlyIndividualCards = cards.filter(card => card.grupal === false)
             const randomCard = onlyIndividualCards[Math.floor(Math.random() * onlyIndividualCards.length)]
             return randomCard
         }else{
-            const onlygrupalCards = Cards.filter(card => card.grupal === true)
+            const onlygrupalCards = cards.filter(card => card.grupal === true)
             const randomCard = onlygrupalCards[Math.floor(Math.random() * onlygrupalCards.length)] 
             return randomCard
         }

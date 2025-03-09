@@ -79,7 +79,7 @@ const InputTeams = ({Onclick,changeTeamName,addPlayerToTeam,teams}: {Onclick: ()
         <div className="card-input">
           <h3>{teams.team1.name}</h3>
           <p>Pon los apodos de tu <b>Team</b></p>
-          { teams.team1.players.map((player) => (<p>{player.name}</p>))}
+          { teams.team1.players.map((player) => (<p key={player.name}>{player.name}</p>))}
           <input type="text" placeholder="" ref={memberRef} />
           <button onClick={() => handleAddMember(1)}>{teamMembers.length < 2 ? 'Agregar' : 'Siguiente'}</button>
         </div>
@@ -109,7 +109,7 @@ const InputTeams = ({Onclick,changeTeamName,addPlayerToTeam,teams}: {Onclick: ()
         <div className="card-input">
           <h3>{teams.team2.name}</h3>
           <p>Pon los apodos de tu <b>Team</b></p>
-          { teams.team2.players.map((player) => (<p>{player.name}</p>))}
+          { teams.team2.players.map((player) => (<p key={player.name}>{player.name}</p>))}
           <input type="text" placeholder="Member Name" ref={memberRef} />
           <button onClick={() => handleAddMember(2)}>{secondTeamMembers.length < 2 ? 'Agregar' : '¡A jugar!'}</button>
         </div>

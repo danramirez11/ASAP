@@ -55,9 +55,12 @@ const Card = ({ teams, rounds, status, selectWinner }: CardType) => {
           <h1>{rounds[status.round].games[status.game].name}</h1>
           <p>{rounds[status.round].games[status.game].players[0]} vs {rounds[status.round].games[status.game].players[1]}</p>
           <p>{rounds[status.round].games[status.game].card}</p>
-          <div className="card-cathegory">
-            <h3>Categoría</h3>
-          </div>
+          { rounds[status.round].games[status.game].subCathegory !== 'none' &&
+            <div className="card-cathegory">
+              <h3>Categoría</h3>
+              <h4>{rounds[status.round].games[status.game].subCathegory}</h4>
+            </div>
+          }
           <button onClick={() => setClicked(true)}>ASAP! ¿Quién fue el ganador?</button>
         </>
       }
