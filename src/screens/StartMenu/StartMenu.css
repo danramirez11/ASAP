@@ -1,4 +1,4 @@
-body {
+.startmenu-body {
     background-image: url('/src/assests/imgs/backk.png');
     background-size: cover;
     background-position: center;
@@ -6,4 +6,13 @@ body {
     height: 100vh;
     margin: 0;
     padding: 0;
+    
+}
+.screeninicio{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 155vh;
+
 }
