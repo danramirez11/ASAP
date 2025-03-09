@@ -56,8 +56,9 @@ button{
 
   body {
     font-family: 'Lufga Regular', sans-serif;
+    background-color: #191919;
   }
-  
+
   h1 {
     font-family: 'Lufga Bold', sans-serif;
     font-size: 36px;
