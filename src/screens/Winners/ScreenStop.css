@@ -1,0 +1,20 @@
+.screenstop-body {
+    background-image: url('/src/assests/imgs/Finishcarga.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    
+}
+.screenstop-body h1{
+    font-family: 'Lufga Medium', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+    margin: 0%;
+}

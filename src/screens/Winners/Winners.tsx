@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Status } from "../../types/types";
-import "./winners.css";
+import "./ScreenStop.css";
 
 type winnerType = {
     status: Status;
@@ -45,7 +45,9 @@ const WinnersScreen = ({status} : winnerType) => {
             pause ? 
 
             <>
-            <h2>¡Stop! Todo ha sido decidio</h2>
+            <div className="screenstop-body">
+            <h1>¡Stop! Todo ha sido decidio</h1>
+            </div>
             </>
             
             :
