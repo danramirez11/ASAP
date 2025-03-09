@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { Game, Rounds, Status, Teams } from "../../types/types";
+import { Rounds, Status, Teams } from "../../types/types";
 
 type CardType = {
   teams: Teams;
   rounds: Rounds;
-  onRounds: () => Game[];
+  onRounds: () => void;
   status: Status;
   selectWinner: (type: string, winner: string) => void;
 }
@@ -44,22 +44,23 @@ const Card = ({ teams, rounds, status, selectWinner }: CardType) => {
     <div>
       { clicked ? 
         <>
-        <button id="team1" onClick={() => handleWinnerSelection('team1')}>{teams.team1.name}</button>
-        <button id="team2" onClick={() => handleWinnerSelection('team2')}>{teams.team2.name}</button>
+          <h2>¡Solo uno puede brillar!</h2>
+          <p>¿Quien se lleva la gloria?</p>
+          <button id="team1" onClick={() => handleWinnerSelection('team1')}>{teams.team1.name}</button>
+          <button id="team2" onClick={() => handleWinnerSelection('team2')}>{teams.team2.name}</button>
+          <p>Selecciona el equipo que ganó el reto</p>
         </>
         :
         <>
-        <h1>{rounds[status.round].games[status.game].players[0]} vs {rounds[status.round].games[status.game].players[1]}</h1>
-        <h1>{rounds[status.round].games[status.game].name}</h1>
-        <h4>{rounds[status.round].games[status.game].card}</h4>
-        <h2>{rounds[status.round].games[status.game].cathegory}</h2>
-        {rounds[status.round].games[status.game].type === 'coop' ? <h3>Grupal</h3> : <h3>Individual</h3>}
-        <button onClick={() => setClicked(true)}>Siguiente</button>
+          <h1>{rounds[status.round].games[status.game].name}</h1>
+          <p>{rounds[status.round].games[status.game].players[0]} vs {rounds[status.round].games[status.game].players[1]}</p>
+          <p>{rounds[status.round].games[status.game].card}</p>
+          <div className="card-cathegory">
+            <h3>Categoría</h3>
+          </div>
+          <button onClick={() => setClicked(true)}>ASAP! ¿Quién fue el ganador?</button>
         </>
       }
-      <p>Ronda {status.round + 1}</p>
-      <p>{teams.team1.name}: {teams.team1.score}</p>
-      <p>{teams.team2.name}: {teams.team2.score}</p>
     </div>
   );
 };

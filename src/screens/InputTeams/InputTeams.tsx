@@ -61,41 +61,58 @@ const InputTeams = ({Onclick,changeTeamName,addPlayerToTeam,teams}: {Onclick: ()
 
   return indexteam === 0 ? (
     <>
-      <h1>Enter your Team names and members</h1>
-      
-        <h2>Team 1</h2>
-        <input type="text" placeholder="Team 1 Name" ref={team1Ref}
-          onChange={() => handleTeamNameChange(1)}
-          />
-        <button onClick={() => handleSubmitTeam(1)}>Submit Team 1</button>
-          </>
+    <h2>¿Cómo se llama tu team?</h2>
+
+    <div className="card-input">
+      <h3>Team 1: <span>{teams.team1.name}</span></h3>
+      <p>¡Dale un nombre a tu <b>Team!</b></p>
+      <input type="text" placeholder="Nombre Team 1" ref={team1Ref}
+      onChange={() => handleTeamNameChange(1)}
+      />
+      <button onClick={() => handleSubmitTeam(1)}>Aceptar</button>
+    </div>
+    </>
   ) : indexteam === 1 ? (
         <>
-        <h2>Add Members to Team 1</h2>
-        { teams.team1.players.map((player) => (<p>{player.name}</p>))}
-        <input type="text" placeholder="Member Name" ref={memberRef} />
-        <button onClick={() => handleAddMember(1)}>Add Member</button>
+        <h2>¿Apodos épicos o qué?</h2>
+
+        <div className="card-input">
+          <h3>{teams.team1.name}</h3>
+          <p>Pon los apodos de tu <b>Team</b></p>
+          { teams.team1.players.map((player) => (<p>{player.name}</p>))}
+          <input type="text" placeholder="" ref={memberRef} />
+          <button onClick={() => handleAddMember(1)}>{teamMembers.length < 2 ? 'Agregar' : 'Siguiente'}</button>
+        </div>
         </>
    
   ) : indexteam === 2 ? (
     
-      <div>
-        <h2>Team 2</h2>
+      <>
+        <h2>¿Como se llama tu team?</h2>
+
+        <div className="card-input">
+        <h3>Team 2: <span>{teams.team2.name}</span></h3>
+        <p>¡Dale un nombre a tu <b>Team!</b></p>
         <input
           type="text"
-          placeholder="Team 2 Name"
+          placeholder="Nombre Team 2"
           ref={team2Ref}
           onChange={() => handleTeamNameChange(2)}
         />
-        <button onClick={() => handleSubmitTeam(2)}>Submit Team 2</button>
-      </div>
+        <button onClick={() => handleSubmitTeam(2)}>Aceptar</button>
+        </div>
+      </>
   ) : (
       <>
-        <h2>Add Members to Team 2</h2>
-        { teams.team2.players.map((player) => (<p>{player.name}</p>))}
-        <input type="text" placeholder="Member Name" ref={memberRef} />
-        <button onClick={() => handleAddMember(2)}>Add Member</button>
-        <button onClick={Onclick}>Lets play</button>
+        <h2>¿Apodos épicos o qué?</h2>
+
+        <div className="card-input">
+          <h3>{teams.team2.name}</h3>
+          <p>Pon los apodos de tu <b>Team</b></p>
+          { teams.team2.players.map((player) => (<p>{player.name}</p>))}
+          <input type="text" placeholder="Member Name" ref={memberRef} />
+          <button onClick={() => handleAddMember(2)}>{secondTeamMembers.length < 2 ? 'Agregar' : '¡A jugar!'}</button>
+        </div>
       </>
     
   );

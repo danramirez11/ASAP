@@ -37,68 +37,75 @@ const useGame = () => {
     const [status, setStatus] = useState<Status>(emptyStatus)
 
     const manageRounds = () => {
-        //const [Card, setCard] = useState({nombre: "",reto: "",categoria: "",puntos: 0,grupal: false});
-        
-        const team1players = teams.team1.players.map(player => player.name)
-        const team2players = teams.team2.players.map(player => player.name)
+        setTeams((prevTeams) => {
+            const team1players = prevTeams.team1.players.map(player => player.name)
+            const team2players = prevTeams.team2.players.map(player => player.name)
 
-        const games: Game[] = []
+            console.log('jugadores iniciales: ', team1players, team2players)
 
-        for (let i = 0; i < 3; i++) {
-            const game: Game = {
-                type: 'comp',
-                card: '',
-                name: '',
-                cathegory: '',
-                players: [],
+            const games: Game[] = []
+
+            for (let i = 0; i < 3; i++) {
+                const game: Game = {
+                    type: 'comp',
+                    card: '',
+                    name: '',
+                    cathegory: '',
+                    players: [],
+                    winner: '',
+                    finished: false
+                }
+
+                const player1 = team1players[Math.floor(Math.random() * team1players.length)]
+                const player2 = team2players[Math.floor(Math.random() * team2players.length)]
+                game.players = [player1, player2]
+
+                console.log('jugadores seleccionados: ', player1, player2)
+
+                team1players.splice(team1players.indexOf(player1), 1)
+                team2players.splice(team2players.indexOf(player2), 1)
+
+                console.log('jugadores restantes: ', team1players, team2players)
+
+                const card = selectRandomCard(false)
+                game.card = card.reto
+                game.name = card.nombre
+                game.cathegory = card.categoria
+
+                games.push(game)
+            }
+
+            const grupalCard = selectRandomCard(true)
+
+            const grupalGame: Game = {
+                type: 'coop',
+                card: grupalCard.reto,
+                name: grupalCard.nombre,
+                cathegory: grupalCard.categoria,
+                players: [teams.team1.name, teams.team2.name],
                 winner: '',
                 finished: false
             }
 
-            const player1 = team1players[Math.floor(Math.random() * team1players.length)]
-            const player2 = team2players[Math.floor(Math.random() * team2players.length)]
-            game.players = [player1, player2]
+            games.push(grupalGame)
 
-            team1players.splice(team1players.indexOf(player1), 1)
-            team2players.splice(team2players.indexOf(player2), 1)
+            const shuffledGames: Game[] = games.sort(() => Math.random() - 0.5);
+            console.log(shuffledGames)
 
-            const card = selectRandomCard(false)
-            game.card = card.reto
-            game.name = card.nombre
-            game.cathegory = card.categoria
+            setStatus((p) => {
+                setRounds((prevRounds: Rounds) => {
+                    console.log(prevRounds)
+                    const pRounds: Rounds = [...prevRounds]
+                    console.log(p.round)
+                    pRounds[p.round].games = shuffledGames
+                    return pRounds
+                })
 
-            games.push(game)
-        }
-
-        const grupalCard = selectRandomCard(true)
-
-        const grupalGame: Game = {
-            type: 'coop',
-            card: grupalCard.reto,
-            name: grupalCard.nombre,
-            cathegory: grupalCard.categoria,
-            players: [teams.team1.name, teams.team2.name],
-            winner: '',
-            finished: false
-        }
-
-        games.push(grupalGame)
-
-        const shuffledGames: Game[] = games.sort(() => Math.random() - 0.5);
-
-        setStatus((p) => {
-            setRounds((prevRounds: Rounds) => {
-                console.log(prevRounds)
-                const pRounds: Rounds = [...prevRounds]
-                console.log(p.round)
-                pRounds[p.round].games = shuffledGames
-                return pRounds
+                return p
             })
 
-            return p
-        })
-
-        return shuffledGames
+                return prevTeams
+            })
     }
 
     const selectRandomCard = (grupaltype: boolean) => {
@@ -213,14 +220,41 @@ const useGame = () => {
                 
                 manageRounds()
 
+                setTimeout(() => {
+                    setStatus((p) => {
+                        return {
+                            ...p,
+                            page: 'stats'
+                        }
+                    })
+                }, 1000);
+
+                setTimeout(() => {
+                    setStatus((p) => {
+                        return {
+                            ...p,
+                            page: 'card'
+                        }
+                    })
+                }, 5000)
             }
         } else {
             setStatus((p) => {
                 return {
                     ...p,
-                    game: p.game + 1
+                    game: p.game + 1,
+                    page: 'stats'
                 }
             })
+
+            setTimeout(() => {
+                setStatus((p) => {
+                    return {
+                        ...p,
+                        page: 'card'
+                    }
+                })
+            }, 5000)
         }
 
     }

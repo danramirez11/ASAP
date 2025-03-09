@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 import StartMenu from './screens/StartMenu/StartMenu'
 import InputTeams from './screens/InputTeams/InputTeams'
@@ -16,6 +16,12 @@ function App() {
     startGame()
     setindexscreen(2)
   }
+
+  useEffect(() => {
+    if (status.page === 'stats') {
+      setindexscreen(2)
+    }
+  }, [status.page])
   
   const screens = 
     status.page === 'finish' ? 
@@ -27,8 +33,10 @@ function App() {
     indexscreen === 1 ? (
     <InputTeams
       Onclick={ () => handleStartGame()} changeTeamName={changeTeamName} addPlayerToTeam={addPlayerToTeam} teams={teams}/>
-    ) : indexscreen === 2 ? (
-      <Intermision teams={teams} Onclick={() => setindexscreen(3)} />
+    ) : 
+    
+    indexscreen === 2 ? (
+      <Intermision rounds={rounds} status={status} Onclick={() => setindexscreen(3)} />
     ) :
     
     indexscreen === 3 ? (
