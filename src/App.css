@@ -1,3 +1,55 @@
+/* aquí pongo la fuente global */
+
+@font-face {
+    font-family: 'Lufga';
+    src: url('/src/assets/fonts/LufgaThin.ttf') format('truetype');
+
+  }
+  
+  @font-face {
+    font-family: 'Lufga';
+    src: url('/src/assets/fonts/LufgaLight.ttf') format('truetype');
+
+  }
+  
+  @font-face {
+    font-family: 'Lufga';
+    src: url('/src/assets/fonts/LufgaRegular.ttf') format('truetype');
+
+  }
+  
+  @font-face {
+    font-family: 'Lufga';
+    src: url('/src/assets/fonts/LufgaMedium.ttf') format('truetype');
+
+  }
+  
+  @font-face {
+    font-family: 'Lufga';
+    src: url('/src/assets/fonts/LufgaSemiBold.ttf') format('truetype');
+
+  }
+  
+  @font-face {
+    font-family: 'Lufga';
+    src: url('/src/assets/fonts/LufgaBold.ttf') format('truetype');
+
+  }
+  
+  @font-face {
+    font-family: 'Lufga';
+    src: url('/src/assets/fonts/LufgaExtraBold.ttf') format('truetype');
+
+  }
+  
+  @font-face {
+    font-family: 'Lufga';
+    src: url('/src/assets/fonts/LufgaBlack.ttf') format('truetype');
+
+  }
+  
+
+
 button{
     background-color: #4101F6;
     color: white;
@@ -7,15 +59,4 @@ button{
     border-radius: 38px;
     cursor: pointer;
 }
-@font-face {
-    font-family: 'MiFuente';
-    src: url('/src/assets/fonts/mi-fuente.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-  }
-  
-  /* Aplicar la fuente globalmente */
-  body {
-    font-family: 'MiFuente', sans-serif;
-  }
   
