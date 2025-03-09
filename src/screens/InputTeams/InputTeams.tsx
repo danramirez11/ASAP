@@ -59,7 +59,7 @@ const InputTeams = ({Onclick, changeTeamName, addPlayerToTeam, teams}: {Onclick:
   };
 
   return (
-    <div className="screeninputbody">
+    <div className="screenTeams-body">
       {indexteam === 0 ? (
         <>
           <h1>¿Cómo se llama tu team?</h1>
