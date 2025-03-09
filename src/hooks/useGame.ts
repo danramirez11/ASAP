@@ -23,7 +23,7 @@ const emptyRounds: Rounds = [
 ]
 
 const emptyStatus: Status = {
-    page: 'finish',
+    page: 'home',
     round: 0,
     game: 0,
     winnerTeam: '',
