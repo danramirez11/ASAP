@@ -1,5 +1,6 @@
 import { useState, useRef } from "react";
 import { Teams } from "../../types/types";
+import './InputTeams.css';
 
 const InputTeams = ({Onclick,changeTeamName,addPlayerToTeam,teams}: {Onclick: () => void; changeTeamName: (team: 'team1' | 'team2', name: string) => void; addPlayerToTeam: (team: 'team1' | 'team2', player: string) => void;
   teams: Teams;
@@ -84,7 +85,6 @@ const InputTeams = ({Onclick,changeTeamName,addPlayerToTeam,teams}: {Onclick: ()
           <button onClick={() => handleAddMember(1)}>{teamMembers.length < 2 ? 'Agregar' : 'Siguiente'}</button>
         </div>
         </>
-   
   ) : indexteam === 2 ? (
     
       <>
