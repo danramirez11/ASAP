@@ -57,9 +57,10 @@ const WinnersScreen = ({status} : winnerType) => {
             <div className="winners-body">
             <div className="winners-container">
             <h1>{status.winnerTeam === 'Empate' ? phrasesTruce[Math.floor(Math.random() * phrasesTruce.length)] : phrasesWin[Math.floor(Math.random() * phrasesWin.length)]}</h1>
-
+            <div className="winnersname">
             <h3>{status.winnerTeam}</h3>
-            <h3>{status.winnerPlayer.map((p) => p)}</h3>
+            <h4>{status.winnerPlayer.map((p) => p)}</h4>
+            </div>
 
             <p>{random[Math.floor(Math.random() * random.length)]}</p>
             </div>
