@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Status } from "../../types/types";
 import "./ScreenStop.css";
+import "./Winners.css";
 
 type winnerType = {
     status: Status;
@@ -53,12 +54,14 @@ const WinnersScreen = ({status} : winnerType) => {
             :
 
             <>
+            <div className="winners-body">
             <h2>{status.winnerTeam === 'Empate' ? phrasesTruce[Math.floor(Math.random() * phrasesTruce.length)] : phrasesWin[Math.floor(Math.random() * phrasesWin.length)]}</h2>
 
             <h1>{status.winnerTeam}</h1>
             <h1>{status.winnerPlayer.map((p) => p)}</h1>
 
             <p>{random[Math.floor(Math.random() * random.length)]}</p>
+            </div>
             </>
 
         }
