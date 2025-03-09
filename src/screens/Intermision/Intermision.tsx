@@ -17,11 +17,11 @@ const Intermision = ({rounds, status, Onclick} : {rounds: Rounds; status: Status
 
     return (
         <>
-            <h2>{rounds[status.round].games[status.game].type === 'comp' ? 'Es hora de un VS' : '¡A trabajar en equipo!'}</h2>
-            <h3>¿Quien se lleva la gloria?</h3>
-            <h3 className="vs-player">{rounds[status.round].games[status.game].players[0]}</h3>
-            <h1>vs</h1>
-            <h3 className="vs-player">{rounds[status.round].games[status.game].players[1]}</h3>
+            <h1>{rounds[status.round].games[status.game].type === 'comp' ? 'Es hora de un VS' : '¡A trabajar en equipo!'}</h1>
+            <p>¿Quien se lleva la gloria?</p>
+            <p className="vs-player">{rounds[status.round].games[status.game].players[0]}</p>
+            <h3>vs</h3>
+            <p className="vs-player">{rounds[status.round].games[status.game].players[1]}</p>
         </>
     )
     }
