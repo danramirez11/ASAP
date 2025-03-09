@@ -1,0 +1,24 @@
+.winner-selection-body {
+    background-image: url('/src/assests/imgs/selectwinner.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    
+}
+.screenwinnerselection{
+    font-family: 'Lufga Medium', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.screenwinnerselection p {
+    margin-bottom:5px ;
+    margin-top: 0px;
+}

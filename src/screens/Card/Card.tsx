@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Rounds, Status, Teams } from "../../types/types";
+import "./Card.css";
 
 type CardType = {
   teams: Teams;
@@ -43,12 +44,15 @@ const Card = ({ teams, rounds, status, selectWinner }: CardType) => {
   return (
     <div>
       { clicked ? 
-        <>
+        <><div className="winner-selection-body">
+          <div className="screenwinnerselection">
           <h1>¡Solo uno puede brillar!</h1>
           <p>¿Quien se lleva la gloria?</p>
           <button id="team1" onClick={() => handleWinnerSelection('team1')}>{teams.team1.name}</button>
           <button id="team2" onClick={() => handleWinnerSelection('team2')}>{teams.team2.name}</button>
           <p>Selecciona el equipo que ganó el reto</p>
+          </div>
+          </div>
         </>
         :
         <>
