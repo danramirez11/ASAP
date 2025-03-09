@@ -41,7 +41,7 @@
   }
   
   
-
+/* cositas globales */
 
 button{
     background-color: #4101F6;
@@ -52,4 +52,13 @@ button{
     border-radius: 38px;
     cursor: pointer;
 }
+
+  
+  h1 {
+    font-family: 'Lufga Bold', sans-serif;
+  }
+  
+  p {
+    font-family: 'Lufga Regular', sans-serif;
+  }
   
