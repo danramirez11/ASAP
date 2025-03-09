@@ -7,3 +7,15 @@ button{
     border-radius: 38px;
     cursor: pointer;
 }
+@font-face {
+    font-family: 'MiFuente';
+    src: url('/src/assets/fonts/mi-fuente.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  /* Aplicar la fuente globalmente */
+  body {
+    font-family: 'MiFuente', sans-serif;
+  }
+  
