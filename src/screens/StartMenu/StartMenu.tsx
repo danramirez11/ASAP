@@ -1,3 +1,5 @@
+import './StartMenu.css';
+
 interface startmenutypes {
     Onclick: () => void
 }
