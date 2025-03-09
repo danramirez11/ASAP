@@ -61,10 +61,10 @@ const InputTeams = ({Onclick,changeTeamName,addPlayerToTeam,teams}: {Onclick: ()
 
   return indexteam === 0 ? (
     <>
-    <h2>¿Cómo se llama tu team?</h2>
+    <h1>¿Cómo se llama tu team?</h1>
 
     <div className="card-input">
-      <h3>Team 1: <span>{teams.team1.name}</span></h3>
+      <h2>Team 1: <span>{teams.team1.name}</span></h2>
       <p>¡Dale un nombre a tu <b>Team!</b></p>
       <input type="text" placeholder="Nombre Team 1" ref={team1Ref}
       onChange={() => handleTeamNameChange(1)}
@@ -74,10 +74,10 @@ const InputTeams = ({Onclick,changeTeamName,addPlayerToTeam,teams}: {Onclick: ()
     </>
   ) : indexteam === 1 ? (
         <>
-        <h2>¿Apodos épicos o qué?</h2>
+        <h1>¿Apodos épicos o qué?</h1>
 
         <div className="card-input">
-          <h3>{teams.team1.name}</h3>
+          <h2>{teams.team1.name}</h2>
           <p>Pon los apodos de tu <b>Team</b></p>
           { teams.team1.players.map((player) => (<p key={player.name}>{player.name}</p>))}
           <input type="text" placeholder="" ref={memberRef} />
@@ -88,10 +88,10 @@ const InputTeams = ({Onclick,changeTeamName,addPlayerToTeam,teams}: {Onclick: ()
   ) : indexteam === 2 ? (
     
       <>
-        <h2>¿Como se llama tu team?</h2>
+        <h1>¿Como se llama tu team?</h1>
 
         <div className="card-input">
-        <h3>Team 2: <span>{teams.team2.name}</span></h3>
+        <h2>Team 2: <span>{teams.team2.name}</span></h2>
         <p>¡Dale un nombre a tu <b>Team!</b></p>
         <input
           type="text"
@@ -104,10 +104,10 @@ const InputTeams = ({Onclick,changeTeamName,addPlayerToTeam,teams}: {Onclick: ()
       </>
   ) : (
       <>
-        <h2>¿Apodos épicos o qué?</h2>
+        <h1>¿Apodos épicos o qué?</h1>
 
         <div className="card-input">
-          <h3>{teams.team2.name}</h3>
+          <h2>{teams.team2.name}</h2>
           <p>Pon los apodos de tu <b>Team</b></p>
           { teams.team2.players.map((player) => (<p key={player.name}>{player.name}</p>))}
           <input type="text" placeholder="Member Name" ref={memberRef} />
