@@ -21,11 +21,13 @@ const Intermision = ({rounds, status, Onclick} : {rounds: Rounds; status: Status
         <div className="intermisionBackground">
 
             <h1>{rounds[status.round].games[status.game].type === 'comp' ? 'Es hora de un VS' : '¡A trabajar en equipo!'}</h1>
+
             <p>¿Quien se lleva la gloria?</p>
             <div className="versus">
             <p className="vs-player">{rounds[status.round].games[status.game].players[0]}</p>
             <p className="vs-player">{rounds[status.round].games[status.game].players[1]}</p>
             </div>
+
         </div>
         </>
     )
