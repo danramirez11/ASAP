@@ -91,14 +91,6 @@ export const cards = [
     "condicion_victoria": "Si PLAYER1 adivina antes de que termine el tiempo, gana. Si no, gana PLAYER2."
   },
   {
-    "nombre": "Dibujo en equipo",
-    "grupal": true,
-    "categoria": "Dibujo",
-    "reto": "Un jugador por equipo dibuja una palabra sin usar letras ni números, mientras los demás intentan adivinar.",
-    "subcategoria": true,
-    "condicion_victoria": "Gana el equipo que adivine primero."
-  },
-  {
     "nombre": "Dibujo sin ver",
     "grupal": false,
     "categoria": "Dibujo",
@@ -113,14 +105,6 @@ export const cards = [
     "reto": "PLAYER2 escoge una palabra y debe dibujarla en un post-it con los ojos cerrados. PLAYER1 intenta adivinar qué representa el dibujo.",
     "subcategoria": true,
     "condicion_victoria": "Si PLAYER1 adivina antes de que termine el tiempo, gana. Si no, gana PLAYER2."
-  },
-  {
-    "nombre": "Dibujo a ciegas en equipo",
-    "grupal": true,
-    "categoria": "Dibujo",
-    "reto": "Un jugador de cada equipo debe dibujar una palabra con los ojos cerrados mientras los demás intentan adivinar qué es.",
-    "subcategoria": true,
-    "condicion_victoria": "Gana el equipo que adivine correctamente primero."
   },
   //PALABRAS
   {
