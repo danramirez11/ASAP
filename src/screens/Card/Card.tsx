@@ -39,8 +39,8 @@ const Card = ({ teams, rounds, status, selectWinner }: CardType) => {
 
   const [clicked, setClicked] = useState(false);
 
-  const handleWinnerSelection = (team: 'team1' | 'team2') => {
-    console.log(`Winner: ${teams[team].name}`);
+  const handleWinnerSelection = (team: 'team1' | 'team2'| 'none') => {
+    
     const type = rounds[status.round].games[status.game].type;
 
     if (type === 'coop') {
@@ -48,9 +48,13 @@ const Card = ({ teams, rounds, status, selectWinner }: CardType) => {
     } else {
       if (team === 'team1') {
         selectWinner(type, rounds[status.round].games[status.game].players[0])
-      } else {
+      } else if (team === 'team2') {
         selectWinner(type, rounds[status.round].games[status.game].players[1]);
+      }else {
+        selectWinner(type, 'none');
       }
+
+
     }
 
     setClicked(false);
@@ -75,6 +79,9 @@ const Card = ({ teams, rounds, status, selectWinner }: CardType) => {
           <div className="button-container">
           <button id="team1" onClick={() => handleWinnerSelection('team1')}>{teams.team1.name}</button>
           <button id="team2" onClick={() => handleWinnerSelection('team2')}>{teams.team2.name}</button>
+          </div>
+          <div>
+          <button id="cancel" onClick={() => handleWinnerSelection('none')}>Empate</button>
           </div>
           <p>Selecciona el equipo que ganó el reto</p>
           </div>
