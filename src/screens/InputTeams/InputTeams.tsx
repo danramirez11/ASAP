@@ -59,7 +59,7 @@ const InputTeams = ({Onclick, changeTeamName, addPlayerToTeam, teams}: {Onclick:
   };
 
   return (
-    <div className="screenTeams-body">
+    <div className="screeninputbody">
       {indexteam === 0 ? (
         <>
         <h1>¿Cómo se llama tu team?</h1>
@@ -80,7 +80,7 @@ const InputTeams = ({Onclick, changeTeamName, addPlayerToTeam, teams}: {Onclick:
           <div className="card-input">
             <h2>{teams.team1.name}</h2>
             <p className="text-team">Pon los apodos de tu <b>Team</b></p>
-            { teams.team1.players.map((player) => (<p key={player.name}>{player.name}</p>))}
+            { teams.team1.players.map((player) => (<p className="text-team" key={player.name}>{player.name}</p>))}
             <div className="placeholder-button">
             <input className="placeholder-team" type="text" placeholder="" ref={memberRef} />
             <button onClick={() => handleAddMember(1)}>{teamMembers.length < 2 ? 'Agregar' : 'Siguiente'}</button>
@@ -92,14 +92,16 @@ const InputTeams = ({Onclick, changeTeamName, addPlayerToTeam, teams}: {Onclick:
           <h1>¿Como se llama tu team?</h1>
           <div className="card-input">
             <h2>Team 2: <span>{teams.team2.name}</span></h2>
-            <p>¡Dale un nombre a tu <b>Team!</b></p>
-            <input
+            <p className="text-team">¡Dale un nombre a tu <b>Team!</b></p>
+            <div className="placeholder-button">
+            <input className="placeholder-team"
               type="text"
-              placeholder="Nombre Team 2"
+              placeholder=""
               ref={team2Ref}
               onChange={() => handleTeamNameChange(2)}
             />
             <button onClick={() => handleSubmitTeam(2)}>Aceptar</button>
+            </div>
           </div>
         </>
       ) : (
@@ -107,10 +109,12 @@ const InputTeams = ({Onclick, changeTeamName, addPlayerToTeam, teams}: {Onclick:
           <h1>¿Apodos épicos o qué?</h1>
           <div className="card-input">
             <h2>{teams.team2.name}</h2>
-            <p>Pon los apodos de tu <b>Team</b></p>
-            { teams.team2.players.map((player) => (<p key={player.name}>{player.name}</p>))}
-            <input type="text" placeholder="Member Name" ref={memberRef} />
+            <p className="text-team">Pon los apodos de tu <b>Team</b></p>
+            { teams.team2.players.map((player) => (<p className="text-team" key={player.name}>{player.name}</p>))}
+            <div className="placeholder-button">
+            <input className="placeholder-team" type="text" placeholder="" ref={memberRef} />
             <button onClick={() => handleAddMember(2)}>{secondTeamMembers.length < 2 ? 'Agregar' : '¡A jugar!'}</button>
+            </div>
           </div>
         </>
       )}
