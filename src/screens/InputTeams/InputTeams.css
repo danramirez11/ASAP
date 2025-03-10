@@ -1,4 +1,4 @@
-.screenTeams-body {
+.screeninputbody {
     background-image: url('/src/assests/imgs/seleccionTeam.png');
     background-size: cover;
     background-position: center;
@@ -6,4 +6,37 @@
     height: 100vh;
     margin: 0;
     padding: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.card-input{
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  background-color: white;
+  flex-direction: column;
+  width: 424px;
+  border-radius: 15px;
+}
+
+.placeholder-team{
+    background-color: white;
+    border: 1px solid #9C9C9C;
+    border-radius: 100px;
+    height: 35px;
+    width: 251px;
+    opacity: 1;
+    text-indent: 20px;
+    margin-bottom: 40px;
+    margin-top: 10px;
+}
+
+.card-input h2{
+    margin-bottom: -10px;
+}
+
+.text-team{
+    color: #343434;
 }

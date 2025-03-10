@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import { Teams } from "../../types/types";
-import "./InputTeam.css";
+import "./InputTeams.css";
 
 const InputTeams = ({Onclick, changeTeamName, addPlayerToTeam, teams}: {Onclick: () => void; changeTeamName: (team: 'team1' | 'team2', name: string) => void; addPlayerToTeam: (team: 'team1' | 'team2', player: string) => void;
   teams: Teams;
@@ -62,14 +62,16 @@ const InputTeams = ({Onclick, changeTeamName, addPlayerToTeam, teams}: {Onclick:
     <div className="screeninputbody">
       {indexteam === 0 ? (
         <>
-          <h1>¿Cómo se llama tu team?</h1>
+        <h1>¿Cómo se llama tu team?</h1>
           <div className="card-input">
             <h2>Team 1: <span>{teams.team1.name}</span></h2>
-            <p>¡Dale un nombre a tu <b>Team!</b></p>
-            <input type="text" placeholder="Nombre Team 1" ref={team1Ref}
+            <p className="text-team">¡Dale un nombre a tu <b>Team!</b></p>
+            <div className="placeholder-button">
+            <input className="placeholder-team" type="text" placeholder="" ref={team1Ref}
             onChange={() => handleTeamNameChange(1)}
             />
             <button onClick={() => handleSubmitTeam(1)}>Aceptar</button>
+            </div>
           </div>
         </>
       ) : indexteam === 1 ? (
@@ -77,10 +79,12 @@ const InputTeams = ({Onclick, changeTeamName, addPlayerToTeam, teams}: {Onclick:
           <h1>¿Apodos épicos o qué?</h1>
           <div className="card-input">
             <h2>{teams.team1.name}</h2>
-            <p>Pon los apodos de tu <b>Team</b></p>
+            <p className="text-team">Pon los apodos de tu <b>Team</b></p>
             { teams.team1.players.map((player) => (<p key={player.name}>{player.name}</p>))}
-            <input type="text" placeholder="" ref={memberRef} />
+            <div className="placeholder-button">
+            <input className="placeholder-team" type="text" placeholder="" ref={memberRef} />
             <button onClick={() => handleAddMember(1)}>{teamMembers.length < 2 ? 'Agregar' : 'Siguiente'}</button>
+            </div>
           </div>
         </>
       ) : indexteam === 2 ? (
