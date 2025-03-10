@@ -1,94 +1,70 @@
 export const cards = [
-  //MIMICA
+  // MÍMICA
   {
     "nombre": "Actuación extrema",
     "grupal": false,
     "categoria": "Mímica",
-    "reto": "PLAYER1 escoge una palabra y debe actuarla sin emitir sonidos ni señalar objetos. PLAYER2 debe adivinar la palabra antes de que termine el tiempo.",
+    "reto": "PLAYER1 elige una palabra y debe representarla mediante gestos, sin emitir sonidos ni señalar objetos. PLAYER2 debe adivinar la palabra antes de que acabe el tiempo.",
     "subcategoria": true,
-    "condicion_victoria": "Si PLAYER2 acierta antes de que acabe el minuto, gana. Si no, gana PLAYER1."
+    "condicion_victoria": "Si PLAYER2 acierta antes de que termine el minuto, gana. Si no, gana PLAYER1."
   },
   {
     "nombre": "Actuación extrema",
     "grupal": false,
     "categoria": "Mímica",
-    "reto": "PLAYER2 escoge una palabra y debe actuarla sin emitir sonidos ni señalar objetos. PLAYER1 debe adivinar la palabra antes de que termine el tiempo.",
+    "reto": "PLAYER2 elige una palabra y debe representarla mediante gestos, sin emitir sonidos ni señalar objetos. PLAYER1 debe adivinar la palabra antes de que acabe el tiempo.",
     "subcategoria": true,
-    "condicion_victoria": "Si PLAYER1 acierta antes de que acabe el minuto, gana. Si no, gana PLAYER2."
+    "condicion_victoria": "Si PLAYER1 acierta antes de que termine el minuto, gana. Si no, gana PLAYER2."
   },
   {
     "nombre": "Mímica en cadena",
     "grupal": true,
     "categoria": "Mímica",
-    "reto": "Un jugador de cada equipo escoge una palabra en secreto. Este jugador debe actuarla para su equipo sin hablar.",
+    "reto": "Un jugador de cada equipo elige una palabra en secreto y debe representarla para su equipo sin hablar. Los compañeros intentan adivinar.",
     "subcategoria": true,
-    "condicion_victoria": "Gana el equipo que adivine la palabra correctamente primero."
+    "condicion_victoria": "Gana el equipo que adivine correctamente la palabra primero."
   },
   {
     "nombre": "Mímica en equipo",
     "grupal": true,
     "categoria": "Mímica",
-    "reto": "PLAYER1 deben la misma palabra al mismo tiempo sin hablar. PLAYER2 intentan adivinar qué están representando.",
+    "reto": "Dos jugadores del mismo equipo deben representar simultáneamente la misma palabra sin hablar, mientras los demás intentan adivinar.",
     "subcategoria": true,
-    "condicion_victoria": "Si PLAYER2 acierta antes de que acabe el minuto, gana. Si no, gana PLAYER1."
+    "condicion_victoria": "Si el equipo acierta antes de que acabe el tiempo, gana."
   },
-  {
-    "nombre": "Mímica en equipo",
-    "grupal": true,
-    "categoria": "Mímica",
-    "reto": "PLAYER2 deben la misma palabra al mismo tiempo sin hablar. PLAYER1 intentan adivinar qué están representando.",
-    "subcategoria": true,
-    "condicion_victoria": "Si PLAYER1 acierta antes de que acabe el minuto, gana. Si no, gana PLAYER2."
-  },
-  //MOLDEO
+  // MOLDEO
   {
     "nombre": "Modela y adivina",
     "grupal": false,
     "categoria": "Moldeo",
-    "reto": "PLAYER1 moldea una figura sin hablar ni hacer señas mientras PLAYER2 intenta adivinar qué es.",
+    "reto": "PLAYER1 moldea una figura con plastilina sin hablar ni hacer señas, mientras PLAYER2 intenta adivinar qué es.",
     "subcategoria": true,
     "condicion_victoria": "Si PLAYER2 acierta antes de que termine el tiempo, gana. Si no, gana PLAYER1."
-  },
-  {
-    "nombre": "Modela y adivina",
-    "grupal": false,
-    "categoria": "Moldeo",
-    "reto": "PLAYER2 moldea una figura sin hablar ni hacer señas mientras PLAYER1 intenta adivinar qué es.",
-    "subcategoria": true,
-    "condicion_victoria": "Si PLAYER1 acierta antes de que termine el tiempo, gana. Si no, gana PLAYER2."
-  },
-  {
-    "nombre": "Creación cooperativa",
-    "grupal": true,
-    "categoria": "Moldeo",
-    "reto": "Cada equipo elige un jugador que será el modelador. Debe escoger una palabra secreta y debe moldearla sin hablar. Los demás jugadores intentan adivinar.",
-    "subcategoria": true,
-    "condicion_victoria": "Gana el equipo que adivine primero la figura correctamente."
   },
   {
     "nombre": "Escultura oculta",
     "grupal": false,
     "categoria": "Moldeo",
-    "reto": "PLAYER1 y PLAYER2 moldean una palabra sin que el otro pueda ver por 30 segundos. Al finalizar, muestran sus esculturas al mismo tiempo e intentan adivinar la del otro.",
+    "reto": "PLAYER1 y PLAYER2 moldean una figura en secreto durante 30 segundos. Al finalizar, muestran sus esculturas e intentan adivinar la del otro.",
     "subcategoria": true,
-    "condicion_victoria": "Gana el jugador que adivine la escultura del otro primero."
+    "condicion_victoria": "Gana quien adivine la escultura del otro primero."
   },
-  //DIBUJO
+  {
+    "nombre": "Creación cooperativa",
+    "grupal": true,
+    "categoria": "Moldeo",
+    "reto": "Cada equipo elige un jugador que será el modelador. Este debe moldear una palabra secreta sin hablar, mientras los compañeros intentan adivinar.",
+    "subcategoria": true,
+    "condicion_victoria": "Gana el equipo que adivine primero la figura correctamente."
+  },
+  // DIBUJO
   {
     "nombre": "Pictionary exprés",
     "grupal": false,
     "categoria": "Dibujo",
-    "reto": "PLAYER1 escoge una palabra y debe dibujarla en un post-it sin escribir letras ni números. PLAYER2 debe adivinar qué representa el dibujo.",
+    "reto": "PLAYER1 elige una palabra y la dibuja en un post-it sin escribir letras ni números. PLAYER2 debe adivinar qué representa el dibujo.",
     "subcategoria": true,
-    "condicion_victoria": "Si PLAYER2 adivina antes de que termine el tiempo, gana. Si no, gana PLAYER1."
-  },
-  {
-    "nombre": "Pictionary exprés",
-    "grupal": false,
-    "categoria": "Dibujo",
-    "reto": "PLAYER2 escoge una palabra y debe dibujarla en un post-it sin escribir letras ni números. PLAYER1 debe adivinar qué representa el dibujo.",
-    "subcategoria": true,
-    "condicion_victoria": "Si PLAYER1 adivina antes de que termine el tiempo, gana. Si no, gana PLAYER2."
+    "condicion_victoria": "Si PLAYER2 acierta antes de que termine el tiempo, gana. Si no, gana PLAYER1."
   },
   {
     "nombre": "Dibujo sin ver",
@@ -96,61 +72,74 @@ export const cards = [
     "categoria": "Dibujo",
     "reto": "PLAYER1 escoge una palabra y debe dibujarla en un post-it con los ojos cerrados. PLAYER2 intenta adivinar qué representa el dibujo.",
     "subcategoria": true,
-    "condicion_victoria": "Si PLAYER2 adivina antes de que termine el tiempo, gana. Si no, gana PLAYER1."
+    "condicion_victoria": "Si PLAYER2 acierta antes de que termine el tiempo, gana. Si no, gana PLAYER1."
   },
-  {
-    "nombre": "Dibujo sin ver",
-    "grupal": false,
-    "categoria": "Dibujo",
-    "reto": "PLAYER2 escoge una palabra y debe dibujarla en un post-it con los ojos cerrados. PLAYER1 intenta adivinar qué representa el dibujo.",
-    "subcategoria": true,
-    "condicion_victoria": "Si PLAYER1 adivina antes de que termine el tiempo, gana. Si no, gana PLAYER2."
-  },
-  //PALABRAS
+  // PALABRAS
   {
     "nombre": "Armando palabras",
     "grupal": false,
     "categoria": "Palabras",
-    "reto": "PLAYER1 y PLAYER2 lanzan 3 dados cada uno. Cada uno debe formar una palabra con las letras que les tocó.",
+    "reto": "PLAYER1 y PLAYER2 lanzan 3 dados cada uno. Deben formar una palabra con las letras obtenidas.",
     "subcategoria": true,
-    "condicion_victoria": "Gana el jugador que forme una palabra primero."
+    "condicion_victoria": "Gana quien forme una palabra primero."
   },
   {
     "nombre": "Batalla de palabras",
     "grupal": true,
     "categoria": "Palabras",
-    "reto": "Un jugador de cada equipo lanza 3 dados y ambos equipos deben formar la mayor cantidad de palabras posibles con esas letras en voz alta.",
+    "reto": "Un jugador de cada equipo lanza 3 dados. Ambos equipos deben formar la mayor cantidad de palabras posibles con esas letras.",
     "subcategoria": true,
     "condicion_victoria": "Gana el equipo que forme más palabras antes de que termine el tiempo."
-  },
-]
+  }
+];
 
-export const subCatgories = {
-  'Palabras': [
-    'Animales',
-    'Nombres propios',
-    'Países o ciudades',
-    'Comida',
-    'Cosas de la escuela'
+export const subCategories = {
+  "Palabras": [
+    "Animales",
+    "Nombres propios",
+    "Países o ciudades",
+    "Comida",
+    "Cosas de la escuela",
+    "Marcas famosas",
+    "Partes del cuerpo",
+    "Frutas y verduras",
+    "Objetos tecnológicos",
+    "Colores"
   ],
-  'Moldeo': [
-    'Comida chatarra',
-    'Cosas de la casa',
-    'Objetos de la oficina',
-    'Animales',
-    'Medios de transporte'
+  "Moldeo": [
+    "Comida chatarra",
+    "Cosas de la casa",
+    "Objetos de la oficina",
+    "Animales",
+    "Medios de transporte",
+    "Personajes de cuentos",
+    "Herramientas",
+    "Electrodomésticos",
+    "Monumentos famosos",
+    "Juguetes"
   ],
-  'Dibujo': [
-    'Personajes de caricaturas clásicas',
-    'Objetos de la cocina',
-    'Animales',
-    'Seres mitológicos',
+  "Dibujo": [
+    "Personajes de caricaturas clásicas",
+    "Objetos de la cocina",
+    "Animales",
+    "Seres mitológicos",
+    "Superhéroes",
+    "Accesorios de moda",
+    "Emojis",
+    "Plantas y árboles",
+    "Instrumentos musicales",
+    "Símbolos famosos"
   ],
-  'Mímica': [
-    'Escenas de películas famosas',
-    'Profesiones',
-    'Deportes',
-    'Instrumentos musicales',
-    'Emociones'
+  "Mímica": [
+    "Escenas de películas famosas",
+    "Profesiones",
+    "Deportes",
+    "Instrumentos musicales",
+    "Emociones",
+    "Acciones diarias",
+    "Personajes históricos",
+    "Tipos de baile",
+    "Eventos festivos",
+    "Objetos cotidianos"
   ]
-}
+};
