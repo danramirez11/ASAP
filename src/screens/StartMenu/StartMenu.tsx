@@ -17,5 +17,3 @@ function StartMenu({ Onclick }: startmenutypes) {
 }
 
 export default StartMenu;
-
-
