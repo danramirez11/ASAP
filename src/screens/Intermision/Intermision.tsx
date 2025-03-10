@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import { Rounds, Status, Teams } from "../../types/types"
 import './Intermision.css'
-import InputTeams from "../InputTeams/InputTeams";
+
 
 const Intermision = ({rounds, status, Onclick,teams} : {rounds: Rounds; status: Status; Onclick: () => void; teams: Teams}) => {
     const handle = () => {
