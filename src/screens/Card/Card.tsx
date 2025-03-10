@@ -14,10 +14,10 @@ const Card = ({ teams, rounds, status, selectWinner }: CardType) => {
   const handleimages = (Category: string) => {
     const backgroundimage = document.getElementById("card-body") as HTMLDivElement;
     const images = {
-      "plastilina": "https://github.com/danramirez11/ASAP/blob/main/src/assests/imgs/plastilina.png",
-      "mimica": "https://github.com/danramirez11/ASAP/blob/main/src/assests/imgs/Mimica.png",
-      "dibujar": "https://github.com/danramirez11/ASAP/blob/main/src/assests/imgs/Dibujar.png",
-      "dados": "https://github.com/danramirez11/ASAP/blob/main/src/assests/imgs/dados.png",
+      "plastilina": "https://github.com/danramirez11/ASAP/blob/main/src/assests/imgs/plastilina.png?raw=true",
+      "mimica": "https://github.com/danramirez11/ASAP/blob/main/src/assests/imgs/Mimica.png?raw=true",
+      "dibujar": "https://github.com/danramirez11/ASAP/blob/main/src/assests/imgs/Dibujar.png?raw=true",
+      "dados": "https://github.com/danramirez11/ASAP/blob/main/src/assests/imgs/dados.png?raw=true",
     }
   
   
