@@ -36,7 +36,7 @@ function App() {
     ) : 
     
     indexscreen === 2 ? (
-      <Intermision rounds={rounds} status={status} Onclick={() => setindexscreen(3)} />
+      <Intermision rounds={rounds} status={status} teams={teams} Onclick={() => setindexscreen(3)} />
     ) :
     
     indexscreen === 3 ? (

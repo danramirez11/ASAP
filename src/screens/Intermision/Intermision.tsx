@@ -1,8 +1,9 @@
 import { useEffect } from "react"
-import { Rounds, Status } from "../../types/types"
+import { Rounds, Status, Teams } from "../../types/types"
 import './Intermision.css'
+import InputTeams from "../InputTeams/InputTeams";
 
-const Intermision = ({rounds, status, Onclick} : {rounds: Rounds; status: Status; Onclick: () => void}) => {
+const Intermision = ({rounds, status, Onclick,teams} : {rounds: Rounds; status: Status; Onclick: () => void; teams: Teams}) => {
     const handle = () => {
         Onclick()
         console.log(rounds)
@@ -24,8 +25,16 @@ const Intermision = ({rounds, status, Onclick} : {rounds: Rounds; status: Status
 
             <p>¿Quien se lleva la gloria?</p>
             <div className="versus">
+                <div className="points-container">
+
             <p className="vs-player">{rounds[status.round].games[status.game].players[0]}</p>
+            <p className="points">{teams.team1.score}</p>
+                </div>
+            <div className="points-container">
+
             <p className="vs-player">{rounds[status.round].games[status.game].players[1]}</p>
+            <p className="points">{teams.team2.score}</p>
+            </div>
             </div>
 
         </div>
