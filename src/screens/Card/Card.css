@@ -1,0 +1,47 @@
+#card-body{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.encounterplayers{
+    color: #F238A7;
+    text-transform: uppercase;
+}
+.card-title{
+    font-size: 36px;
+    width: 424px;
+    text-align: center;
+}
+.challenge{
+    font-size: 16px;
+    width: 510px;
+    text-align: center;
+}
+.categorycard{
+    font-size: 24px;
+    text-align: center;
+    margin: 0;
+}
+.categorytitle{
+    font-size: 30px;
+    color: #4101F6;
+    font-weight: bold;
+    margin: 0;
+}
+.card-cathegory{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #CFF665;
+    color: #4101F6;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px;
+}
