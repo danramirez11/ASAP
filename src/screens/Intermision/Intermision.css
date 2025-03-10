@@ -1,0 +1,29 @@
+.intermisionBackground{
+    background-image: url('../../assests/imgs/Intermision.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.versus{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    
+    flex-direction: column;
+    width: 424px;
+    margin-top: 40px;
+    border-radius: 15px;
+    
+}
+.vs-player{
+    background-color: #4101F6;
+    padding: 15px 20px;
+    border-radius: 15px;
+}
