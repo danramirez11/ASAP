@@ -63,6 +63,7 @@ const WinnersScreen = ({status} : winnerType) => {
             </div>
 
             <p>{random[Math.floor(Math.random() * random.length)]}</p>
+            <button onClick={() => location.reload()}>Revancha?</button>
             </div>
             </div>
             </>
