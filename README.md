@@ -14,7 +14,6 @@ Asap! is a phygital board game (integrating physical and digital components) ins
 - **Drawing:** Sketch an object or scene for teammates to guess.
 - **Clay Modeling:** Sculpt figures using clay without gestures or speech.
 - **Word Formation:** Create words with letter dice based on a given category.
-- **Trivia:** Answer general knowledge questions to earn points.
 
 ### Example Challenges:
 - Charades: "Act like an astronaut walking on the moon."
@@ -26,7 +25,6 @@ Asap! is a phygital board game (integrating physical and digital components) ins
 ## App Features
 - **Random Card Selection:** The app assigns challenges and notifies players of their category.
 - **Score Tracker:** Real-time team score display.
-- **Category Notifications:** Animated and sound-enhanced category announcements for immersive gameplay.
 
 ## Prototype Components
 ### Physical Elements:
