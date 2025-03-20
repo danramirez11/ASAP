@@ -20,7 +20,6 @@ Asap! is a phygital board game (integrating physical and digital components) ins
 - Drawing: "Draw a birthday scene."
 - Clay Modeling: "Sculpt a dinosaur."
 - Word Formation: "Make as many 3-letter words as possible in 1 minute."
-- Trivia: "Which continent is home to the Nile River?"
 
 ## App Features
 - **Random Card Selection:** The app assigns challenges and notifies players of their category.
